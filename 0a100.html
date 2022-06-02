@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0 a 100</title>
+
+    <script>
+        function adivinhe (){
+                
+            const nrand = Math.floor(Math.random()*101);
+            console.log(nrand);
+            var numero;
+            numero = prompt("Digite um número entre 1 e 100:");
+            console.log("O numero digitado é: "+numero);
+            while(numero != nrand){
+                if(numero < 1 || numero > 100){
+                    alert("Palpite inválido, digite um número de 0 a 100.");
+                    numero = prompt("Digite um número entre 1 e 100:");
+                }
+
+                else if(numero < nrand){
+                    alert("O palpite é MENOR que o número");
+                    numero = prompt("Digite um número entre 1 e 100:");
+                }
+
+                else if(numero > nrand){
+                    alert("O palpite é MAIOR que o número");
+                    numero = prompt("Digite um número entre 1 e 100:");
+                }
+                else{
+                    alert("Palpite inválido, digite um número de 0 a 100.")
+                    numero = prompt("Digite um número entre 1 e 100:");
+                }
+            }
+            if(numero == nrand){
+                alert("Acertou!!!");
+                }
+
+        }    
+</script>
+
+<style>
+    .main{
+        width: 500px;
+        height: 200px;
+        border: 1px dotted black;
+        margin: 90px;
+        padding: 30px;
+        text-align: center;
+    }
+    button{
+        padding: 20px;
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        border-radius: 6px;
+        border: 2px solid black;
+    }
+    button:hover{
+        background-color: white;
+        color: black;
+    }
+</style>
+
+</head>
+<body>
+    <div class="main"><h2>Estou pensando em um número entre 0 e 100, que número é esse?</h2>
+            <button id="adivinhe" onclick="adivinhe()">Adivinhe</button>
+        <br>
+
+    </div><!--main-->
+    
+</body>
+</html>
